@@ -52,8 +52,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lights.msm7x27 \
     power.msm7x27 \
+    e2fsck \
+    fibmap.f2fs \
+    fsck.f2fs \
     make_ext4fs \
     brcm_patchram_plus \
+    mkfs.f2fs \
+    resize2fs \
     setup_fs
 
 ## Ramdisk
