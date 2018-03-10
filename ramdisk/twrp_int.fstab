@@ -1,4 +1,5 @@
-#mount point	fstype		device						[options]
+# mount point	fstype    device                    [options]
+
 /boot       	bml     	BOARD_BML_BOOT
 /recovery   	bml     	BOARD_BML_RECOVERY
 /cache      	ext4    	/dev/block/stl14								flags=backup=1;canbewiped;wipeingui;wipeduringfactoryreset
@@ -6,5 +7,5 @@
 /system     	ext4    	BOARD_STL_SYSTEM								flags=backup=1;canbewiped;wipeingui
 /sdcard     	vfat    	/dev/block/mmcblk0p1  	/dev/block/mmcblk0 		flags=display="SDcard";storage;wipeingui;settingsstorage;removable
 /sd-ext     	ext4    	/dev/block/mmcblk0p2  							flags=wipeingui;removable
-/internal_data 	ext4		userdata 										flags=display="Internal Data";backup=0;canbewiped;wipeingui
-/internal_system ext4		system 											flags=display="Internal System";backup=0;canbewiped;wipeingui
+/os2sd_data auto /dev/block/mmcblk0p4 flags=display="OS2SD Data";backup=0;canbewiped;wipeingui;wipeduringfactoryreset
+/os2sd_system auto /dev/block/mmcblk0p2 flags=display="OS2SD System";backup=0;canbewiped;wipeingui

@@ -20,6 +20,28 @@ LOCAL_SRC_FILES		:= twrp.fstab
 LOCAL_MODULE_PATH	:= $(TARGET_RECOVERY_ROOT_OUT)/etc
 include $(BUILD_PREBUILT)
 
+#######################################
+# twrp_int.fstab
+
+include $(CLEAR_VARS)
+LOCAL_MODULE		:= twrp_int.fstab
+LOCAL_MODULE_TAGS	:= optional
+LOCAL_MODULE_CLASS	:= ETC
+LOCAL_SRC_FILES		:= twrp_int.fstab
+LOCAL_MODULE_PATH	:= $(TARGET_RECOVERY_ROOT_OUT)/etc
+include $(BUILD_PREBUILT)
+
+#######################################
+# twrp_sd.fstab
+
+include $(CLEAR_VARS)
+LOCAL_MODULE		:= twrp_sd.fstab
+LOCAL_MODULE_TAGS	:= optional
+LOCAL_MODULE_CLASS	:= ETC
+LOCAL_SRC_FILES		:= twrp_sd.fstab
+LOCAL_MODULE_PATH	:= $(TARGET_RECOVERY_ROOT_OUT)/etc
+include $(BUILD_PREBUILT)
+
 $(LOCAL_BUILT_MODULE): $(LOCAL_PATH)/$(LOCAL_SRC_FILES)
 	@echo "Adjusting partiton configuration for twrp.fstab: $< -> $@"
 	@mkdir -p $(dir $@)
