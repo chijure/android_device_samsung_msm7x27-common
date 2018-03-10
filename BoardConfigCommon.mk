@@ -214,5 +214,8 @@ endif
 ## TEMPORARY HACK: skip building external/chromium_org/
 PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes
 
+## ODEX ROM
+WITH_DEXPREOPT := true
+
 ## zRAM size
 BOARD_ZRAM_SIZE := 50331648
