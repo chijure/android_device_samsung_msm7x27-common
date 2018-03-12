@@ -141,10 +141,10 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.debuggable=1 \
     ro.allow.mock.location=0
 
-ifneq (CM_EXPERIMENTAL, $(RELEASE_TYPE))
+ifneq (eng, $(TARGET_BUILD_VARIANT))
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.adb.secure=1 \
-    ro.secure=1
+    ro.secure=0
 else
 ADDITIONAL_DEFAULT_PROPERTIES += \
    ro.adb.secure=0 \

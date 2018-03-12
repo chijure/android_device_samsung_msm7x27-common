@@ -15,10 +15,6 @@ on init
     symlink /storage/sdcard0 /sdcard
     export EXTERNAL_STORAGE /storage/sdcard0
 
-    # sd-ext
-    mkdir /sd-ext 0771 system system
-    export SD_EXT_DIRECTORY /sd-ext
-
 on fs
 
     # fsr driver is too dumb to set rotational flag correctly
@@ -138,6 +134,13 @@ service g5sensord /system/bin/g5sensord
 service fuse_sdcard0 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard0 /storage/sdcard0
     class late_start
     disabled
+
+# create filesystems if necessary
+service setup_fs /system/bin/setup_fs /dev/block/stl13
+    class core
+    user root
+    group root
+    oneshot
 
 service get_macaddrs /system/bin/get_macaddrs
     class main

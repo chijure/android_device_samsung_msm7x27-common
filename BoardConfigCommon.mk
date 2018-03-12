@@ -48,7 +48,7 @@ ENABLE_WEBGL := true
 TARGET_WEBKIT_USE_MORE_MEMORY := true
 
 ## Fonts
-SMALLER_FONT_FOOTPRINT := true
+#SMALLER_FONT_FOOTPRINT := true
 
 ## Camera
 USE_CAMERA_STUB := false
@@ -167,8 +167,8 @@ BOARD_HAS_DOWNLOAD_MODE := true
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 8388608
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 230686720
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 190054400
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 536870912
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 1163919360
 BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_KERNEL_CMDLINE :=
@@ -205,12 +205,12 @@ TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
 ## OTA script extras file (build/tools/releasetools)
-ifneq (,$(filter galaxy5,$(CM_BUILD)))
+#ifneq (,$(filter galaxy5,$(CM_BUILD)))
 	# We can't fit live wallpapers & other features on the /system partition
-	TARGET_OTA_EXTRAS_FILE := device/samsung/msm7x27-common/releasetools-extras-tiny.txt
-else
-	TARGET_OTA_EXTRAS_FILE := device/samsung/msm7x27-common/releasetools-extras.txt
-endif
+#	TARGET_OTA_EXTRAS_FILE := device/samsung/msm7x27-common/releasetools-extras-tiny.txt
+#else
+#	TARGET_OTA_EXTRAS_FILE := device/samsung/msm7x27-common/releasetools-extras.txt
+#endif
 
 ## TEMPORARY HACK: skip building external/chromium_org/
 PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes
